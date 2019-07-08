@@ -481,11 +481,11 @@ class NumberFormat extends React.Component {
   }
 
   formatNumString(numStr: string = '') {
-    const {format, allowEmptyFormatting} = this.props;
+    const {format, allowEmptyFormatting, suffix, prefix} = this.props;
     let formattedValue = numStr;
 
     if (numStr === '' && !allowEmptyFormatting) {
-      formattedValue = ''
+      formattedValue = prefix + suffix;
     } else if (numStr === '-' && !format) {
       formattedValue = '-';
     } else if (typeof format === 'string') {
