@@ -831,11 +831,13 @@
         var numStr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
         var _this$props6 = this.props,
             format = _this$props6.format,
-            allowEmptyFormatting = _this$props6.allowEmptyFormatting;
+            allowEmptyFormatting = _this$props6.allowEmptyFormatting,
+            suffix = _this$props6.suffix,
+            prefix = _this$props6.prefix;
         var formattedValue = numStr;
 
         if (numStr === '' && !allowEmptyFormatting) {
-          formattedValue = '';
+          formattedValue = prefix + suffix;
         } else if (numStr === '-' && !format) {
           formattedValue = '-';
         } else if (typeof format === 'string') {
